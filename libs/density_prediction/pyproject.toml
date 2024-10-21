@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "density_prediction_api"
+version = "0.1.0"
+description = """A FastAPI-based inference API with large data streaming. It predicts the thermosphere density (space weather science)."""
+authors = ["Leonid Ganeline <leo.gan.57@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.1"
+uvicorn = "^0.32.0"
+torch = "^2.5.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+ruff = "^0.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
