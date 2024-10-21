@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pythonproject"
+name = "density_prediction"
 version = "0.1.0"
 description = ""
 authors = ["leo-gan <leo.gan.57@gmail.com>"]
