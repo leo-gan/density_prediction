@@ -1,15 +1,16 @@
 import torch
 
-from app.models.transformer_model import TransformerModel
+from app.models.transformer_ts import TransformerTS
 from app.utils.logger import logger
 
-def stream_data_to_model(model: TransformerModel, file):
-    """
+
+def stream_data_to_model(model: TransformerTS, file):
+    """TODO
     Mocks streaming data from a file and running inference.
     """
     try:
         logger.info(f"Streaming data from file: {file.filename}")
-        with open(file.filename, 'rb') as f:
+        with open(file.filename, "rb") as f:
             while True:
                 chunk = f.read(1024)  # read 1KB chunk at a time
                 if not chunk:
