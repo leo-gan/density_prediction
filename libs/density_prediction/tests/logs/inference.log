@@ -1,0 +1,13 @@
+2024-10-21 20:09:41,404 - density_prediction - INFO - Testing inference endpoint with sample data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,414 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-21 20:09:41,415 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': [{'type': 'missing', 'loc': ['body', 'files'], 'msg': 'Field required', 'input': None}]}
+2024-10-21 20:09:41,417 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,418 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,420 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,421 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,422 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,423 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,424 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,425 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,427 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
+2024-10-21 20:09:41,428 - density_prediction - INFO -     Making asynchronous request with data: {'input': [1.0, 2.0, 3.0, 4.0, 5.0]}
