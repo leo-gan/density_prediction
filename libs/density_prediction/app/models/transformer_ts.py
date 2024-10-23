@@ -32,7 +32,7 @@ class TransformerTimeSeries(nn.Module):
         self.transformer_encoder = nn.TransformerEncoder(encoder_layers, num_layers)
         self.fc = nn.Linear(
             d_model, num_features
-        )  # Output same dimension as input (10 features)
+        )
 
     def forward(self, src):
         src = self.input_layer(src)
