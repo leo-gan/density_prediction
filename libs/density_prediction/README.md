@@ -9,11 +9,7 @@ low earth orbit. Density estimation is a part of the [Space Weather](https://en.
 ```bash
 root/  # Project root
 │
-├── data  # Datasets and evaluation results. Not in Repo!
-│   ├──  original
-│   └── reduced
 ├── docs  # Documentation. . Not in Repo!
-├── experiments  # Jupyter notebooks with experiments
 └── libs/density_prediction  # Main application folder
     ├── Dockerfile
     ├── poetry.lock
