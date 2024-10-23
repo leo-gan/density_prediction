@@ -3,6 +3,9 @@ name = "density_prediction"
 version = "0.1.0"
 description = "A FastAPI-based inference API with data streaming. It predicts the thermosphere density (space weather science)."
 authors = ["Leonid Ganeline <leo.gan.57@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://www.github.com/leo-gan/density_prediction"
 
 [tool.poetry.dependencies]
 python = "^3.10"
