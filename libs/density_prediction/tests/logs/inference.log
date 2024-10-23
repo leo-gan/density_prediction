@@ -1,55 +1,11 @@
-2024-10-22 20:20:50,092 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:20:50,115 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_a
-2024-10-22 20:20:50,115 - density_prediction - INFO - Response shape: (3, 10000)
-2024-10-22 20:20:50,152 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
-2024-10-22 20:20:50,160 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:20:50,178 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_b
-2024-10-22 20:20:50,188 - density_prediction - INFO - Response shape: torch.Size([1, 10000])
-2024-10-22 20:20:50,202 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
-2024-10-22 20:20:50,204 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
-2024-10-22 20:20:50,205 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
-2024-10-22 20:20:50,206 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
-2024-10-22 20:26:15,540 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:26:15,572 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_a
-2024-10-22 20:26:15,572 - density_prediction - INFO - Response shape: (3, 10000)
-2024-10-22 20:26:15,608 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
-2024-10-22 20:26:15,616 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:26:15,635 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_b
-2024-10-22 20:26:15,641 - density_prediction - INFO - Response shape: torch.Size([1, 10000])
-2024-10-22 20:26:15,655 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
-2024-10-22 20:26:15,657 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
-2024-10-22 20:26:15,658 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
-2024-10-22 20:26:15,658 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
-2024-10-22 20:27:50,654 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:27:50,678 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_a
-2024-10-22 20:27:50,678 - density_prediction - INFO - Response shape: (3, 10000)
-2024-10-22 20:27:50,715 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
-2024-10-22 20:27:50,723 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:27:50,742 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_b
-2024-10-22 20:27:50,751 - density_prediction - INFO - Response shape: torch.Size([1, 10000])
-2024-10-22 20:27:50,765 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
-2024-10-22 20:27:50,766 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
-2024-10-22 20:27:50,767 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
-2024-10-22 20:27:50,768 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
-2024-10-22 20:31:25,478 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:31:25,505 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_a
-2024-10-22 20:31:25,506 - density_prediction - INFO - Response shape: (3, 10000)
-2024-10-22 20:31:25,542 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
-2024-10-22 20:31:25,550 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:31:25,572 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_b
-2024-10-22 20:31:25,579 - density_prediction - INFO - Response shape: torch.Size([1, 10000])
-2024-10-22 20:31:25,594 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
-2024-10-22 20:31:25,595 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
-2024-10-22 20:31:25,597 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
-2024-10-22 20:31:25,597 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
-2024-10-22 20:34:56,930 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:34:56,953 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_a
-2024-10-22 20:34:56,953 - density_prediction - INFO - Response shape: (3, 10000)
-2024-10-22 20:34:56,991 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
-2024-10-22 20:34:57,000 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-22 20:34:57,019 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_b
-2024-10-22 20:34:57,026 - density_prediction - INFO - Response shape: torch.Size([1, 10000])
-2024-10-22 20:34:57,042 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
-2024-10-22 20:34:57,043 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
-2024-10-22 20:34:57,044 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
-2024-10-22 20:34:57,045 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-23 15:54:28,133 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-23 15:54:28,158 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_a
+2024-10-23 15:54:28,158 - density_prediction - INFO - Response shape: (3, 10000)
+2024-10-23 15:54:28,197 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
+2024-10-23 15:54:28,206 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-23 15:54:28,226 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_b
+2024-10-23 15:54:28,232 - density_prediction - INFO - Response shape: torch.Size([1, 10000])
+2024-10-23 15:54:28,247 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-23 15:54:28,248 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-23 15:54:28,249 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-23 15:54:28,250 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
