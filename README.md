@@ -7,7 +7,7 @@ low earth orbit. Density estimation is a part of the [Space Weather](https://en.
 ## Project Structure
 
 ```bash
-root/  # Project root
+root/  # Repository root
 │
 ├── data  # Datasets and evaluation results. Not in Repo!
 │   ├──  original
