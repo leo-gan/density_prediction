@@ -28,7 +28,7 @@ def sample_data():
 def prediction_array():
     with open(PREDICTED_DATA_FILE, "r") as f:
         array_list = json.load(f)
-    return np.array([array_list])
+    return np.array(array_list)
 
 
 @pytest.fixture
@@ -87,10 +87,14 @@ def test_inference_endpoint_ts_model(sample_data, prediction_array):
     assert response.status_code == 200
     assert "array" in response.json()  # Check for expected key in response
     response_array = np.array(response.json()["array"])
+    ## Use the following commented code to save the response array for future testing:
+    # with open(PREDICTED_DATA_FILE, "w") as f:
+    #     json.dump(response.json()["array"], f)
+    #     print(f"Saved the response array to: {PREDICTED_DATA_FILE}")
     assert response_array.shape == prediction_array.shape
     assert np.allclose(response_array, prediction_array, rtol=1e-03)
     logger.info(
-        f"  SUCCESS: Inference endpoint returned: {len(response.json()['array']) = }"
+        f"  SUCCESS: Inference endpoint returned: {response_array.shape = }"
     )
 
 
@@ -102,21 +106,20 @@ def test_inference_endpoint_ts_model_autoregression(
         f"Testing inference endpoint with: {len(sample_data) = }, {horizon_steps = }"
     )
 
-    params = {"model": "tts_v1"}
+    params = {"model": "tts_v1",  "horizon_steps": horizon_steps}
     data = {"array": sample_data}
     response = client.post("/inference/predict", params=params, json=data)
     assert response.status_code == 200
     assert "array" in response.json()  # Check for expected key in response
     response_array = np.array(response.json()["array"])
-    # only the first element in prediction_array is needed
     response_array_item_0 = response_array[:1]
     assert response_array_item_0.shape == prediction_array.shape
     # the first item is the same as the prediction_array, not the others!
-    assert np.allclose(response_array_item_0, prediction_array, rtol=1e-03)
-    assert not np.allclose(response_array[1:2], prediction_array, rtol=1e-03)
-    assert not np.allclose(response_array[2:3], prediction_array, rtol=1e-03)
+    assert np.array_equal(response_array_item_0, prediction_array)
+    assert not np.array_equal(response_array[1:2], prediction_array)
+    assert not np.array_equal(response_array[2:3], prediction_array)
     logger.info(
-        f"  SUCCESS: Inference endpoint returned: {len(response.json()['array']) = }"
+        f"  SUCCESS: Inference endpoint returned: {response_array.shape = }"
     )
 
 
