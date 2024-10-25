@@ -1,11 +1,303 @@
-2024-10-23 15:54:28,133 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-23 15:54:28,158 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_a
-2024-10-23 15:54:28,158 - density_prediction - INFO - Response shape: (3, 10000)
-2024-10-23 15:54:28,197 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
-2024-10-23 15:54:28,206 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
-2024-10-23 15:54:28,226 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_b
-2024-10-23 15:54:28,232 - density_prediction - INFO - Response shape: torch.Size([1, 10000])
-2024-10-23 15:54:28,247 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
-2024-10-23 15:54:28,248 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
-2024-10-23 15:54:28,249 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
-2024-10-23 15:54:28,250 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 13:23:52,168 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:23:52,192 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_a
+2024-10-25 13:23:52,192 - density_prediction - ERROR - Model 'model_a' not found
+2024-10-25 13:23:52,204 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:23:52,224 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: model_b
+2024-10-25 13:23:52,224 - density_prediction - ERROR - Model 'model_b' not found
+2024-10-25 13:23:52,229 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 13:23:52,231 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 13:23:52,232 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 13:25:29,533 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:25:29,557 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 13:25:29,557 - density_prediction - INFO - Response shape: (3, 10000)
+2024-10-25 13:25:29,596 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
+2024-10-25 13:25:29,604 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:25:29,624 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:25:29,643 - density_prediction - INFO - Response shape: torch.Size([1, 10000])
+2024-10-25 13:25:29,660 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 13:25:29,661 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 13:25:29,662 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 13:25:29,663 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 13:39:26,658 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:39:26,682 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 13:39:26,683 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 13:39:26,725 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:39:26,748 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:39:26,916 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 13:39:26,917 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 13:39:26,918 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 13:40:49,785 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:40:49,810 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 13:40:49,811 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 13:40:49,848 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 13:41:36,576 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:41:36,602 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 13:41:36,603 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 13:41:36,646 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 13:41:36,655 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:41:36,679 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:41:36,850 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 13:41:36,851 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 13:41:36,852 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 13:44:00,837 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:44:00,867 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 13:44:59,113 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:44:59,142 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 13:45:03,389 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 13:45:40,446 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 13:45:54,744 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:45:54,773 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 13:45:54,774 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 13:45:54,814 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 13:45:54,823 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:45:54,843 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:45:55,013 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 13:45:55,014 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 13:45:55,015 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 13:46:00,831 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:46:00,861 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:48:43,498 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:48:43,523 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:52:04,852 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:52:04,883 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:58:16,511 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:58:16,536 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:58:16,545 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 13:59:59,353 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 13:59:59,376 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 13:59:59,383 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 13:59:59,397 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:00:04,762 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:00:04,786 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:00:04,786 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 14:00:04,821 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:00:04,830 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:00:04,850 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:00:04,858 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:00:04,871 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:00:04,873 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:00:04,874 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:00:04,874 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:04:55,674 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:04:55,698 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:04:55,698 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 14:04:55,736 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:04:55,742 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:04:55,772 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:04:55,920 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:04:55,941 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:04:55,949 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:04:55,963 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:04:55,964 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:04:55,965 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:04:55,966 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:08:01,721 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:08:01,753 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:09:09,733 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:09:09,767 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:11:40,641 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:11:40,665 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:11:40,665 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:11:40,686 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:11:40,710 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:11:40,711 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:11:40,754 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:11:40,773 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:11:40,782 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:11:40,798 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:11:40,800 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:11:40,801 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:11:40,802 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:12:14,810 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:12:14,844 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:12:33,795 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:18:07,106 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:18:07,131 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:18:07,131 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:19:59,675 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:19:59,706 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:20:06,660 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:21:07,507 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:21:07,541 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:21:12,348 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:24:05,447 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:24:05,479 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:25:07,624 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:25:07,653 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:25:07,653 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:25:11,269 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:25:11,295 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:25:11,295 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:25:11,317 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:25:11,336 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:25:11,337 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:25:11,387 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:25:11,409 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:25:11,417 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:25:11,432 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:25:11,435 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:25:11,436 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:25:11,438 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:26:17,551 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:26:17,579 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:26:17,579 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 14:26:17,618 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:26:21,481 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:26:21,506 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:26:21,507 - density_prediction - INFO - Response shape: (1, 3, 10000)
+2024-10-25 14:26:21,546 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:26:21,552 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:26:21,571 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:26:21,714 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:26:21,735 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:26:21,743 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:26:21,757 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:26:21,758 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:26:21,759 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:26:21,760 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:27:33,790 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:27:33,820 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:28:43,095 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:28:43,125 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:34:00,599 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:34:00,626 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:35:34,265 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:35:34,294 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:36:50,633 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:36:50,657 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:36:50,657 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:36:50,678 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:36:50,699 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:36:50,699 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:36:50,748 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:36:50,769 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:36:50,776 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:36:50,790 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:36:50,792 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:36:50,793 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:36:50,794 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:39:56,731 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:39:56,759 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:40:11,700 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:46:15,157 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:46:15,187 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:46:15,187 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:46:15,205 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:46:15,224 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:46:15,225 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:46:15,274 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:46:15,294 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:46:15,302 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:46:15,316 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:46:15,317 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:46:15,319 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:46:15,319 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:46:47,568 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:46:47,599 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:47:00,719 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:48:47,794 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:48:47,819 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:48:47,819 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:49:12,133 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:49:12,163 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:49:12,163 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:49:12,177 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:49:19,518 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:49:19,546 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:49:19,546 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:49:19,558 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:49:19,565 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:49:19,584 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:49:19,585 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:49:19,669 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:49:19,689 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:49:19,697 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:49:19,711 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:49:19,712 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:49:19,713 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:49:19,714 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:52:26,295 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:52:26,323 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:52:26,323 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:56:25,637 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:56:25,661 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:56:25,662 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:57:21,512 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:57:21,536 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:57:21,536 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:57:21,568 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
+2024-10-25 14:57:25,790 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:57:25,820 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:57:25,821 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:57:25,835 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:57:25,842 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:57:25,866 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 14:57:25,867 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 14:57:25,899 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
+2024-10-25 14:57:25,909 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:57:25,929 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:57:25,939 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:57:25,956 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 14:57:25,957 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 14:57:25,958 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 14:57:25,959 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 14:59:23,088 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 14:59:23,117 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 14:59:23,126 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 14:59:23,139 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 15:05:43,356 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 15:05:43,383 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 15:05:43,383 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:05:43,396 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 15:05:43,407 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1, horizon_steps = 3
+2024-10-25 15:05:43,428 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 15:05:43,428 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 15:05:51,927 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
+2024-10-25 15:05:51,942 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 15:05:51,968 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 15:05:55,760 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:06:02,964 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 15:06:02,977 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1, horizon_steps = 3
+2024-10-25 15:06:02,998 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 15:06:03,006 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:08:01,240 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 15:08:01,266 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 15:08:01,266 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:08:01,278 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 15:08:01,285 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1, horizon_steps = 3
+2024-10-25 15:08:01,306 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 15:08:01,306 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 15:08:01,338 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
+2024-10-25 15:08:01,346 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 15:08:01,365 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 15:08:01,372 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:08:01,382 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 15:08:01,391 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1, horizon_steps = 3
+2024-10-25 15:08:01,411 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 15:08:01,419 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:08:01,432 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 15:08:01,434 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 15:08:01,435 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 15:08:01,436 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}
+2024-10-25 15:10:24,590 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1, horizon_steps = 3
+2024-10-25 15:10:24,617 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 15:10:24,618 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 15:10:24,653 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
+2024-10-25 15:10:47,730 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 15:10:47,755 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 15:10:47,755 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:10:47,767 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 15:10:47,774 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1, horizon_steps = 3
+2024-10-25 15:10:47,796 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: fake
+2024-10-25 15:10:47,797 - density_prediction - INFO - Response shape: (3, 1, 10000)
+2024-10-25 15:10:47,831 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 3
+2024-10-25 15:10:47,840 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1
+2024-10-25 15:10:47,860 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 15:10:47,867 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:10:47,878 - density_prediction - INFO -   SUCCESS: Inference endpoint returned: len(response.json()['array']) = 1
+2024-10-25 15:10:47,887 - density_prediction - INFO - Testing inference endpoint with: len(sample_data) = 1, horizon_steps = 3
+2024-10-25 15:10:47,908 - density_prediction - INFO - Request shape: (1, 3, 10000) for model: tts_v1
+2024-10-25 15:10:47,915 - density_prediction - INFO - Response shape: (1, 1, 10000)
+2024-10-25 15:10:47,928 - density_prediction - INFO - Testing inference endpoint with invalid input: {'input': 'invalid_data'}
+2024-10-25 15:10:47,930 - density_prediction - ERROR - Invalid request: {'input': 'invalid_data'}
+2024-10-25 15:10:47,930 - density_prediction - INFO -   SUCCESS: Inference endpoint returned error response for invalid input: {'detail': "Request must contain 'array' key with a list of values."}

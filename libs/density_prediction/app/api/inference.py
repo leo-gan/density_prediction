@@ -12,9 +12,10 @@ router = APIRouter()
 
 model_path = Path(settings.MODEL_PATH)
 
-model_a = FakeModel(model_path=model_path)
-
-model_b = TransformerTS(model_path=model_path)
+models = {
+    "fake": FakeModel(model_path=model_path),
+    "tts_v1": TransformerTS(model_path=model_path),
+}
 
 
 class PredictRequest(BaseModel):
@@ -29,7 +30,8 @@ class PredictResponse(BaseModel):
 @router.post("/predict", response_model=PredictResponse)
 async def predict(
     request: dict,
-    model: str = Query("model_a", description="The model to use for prediction"),
+    model: str = Query("fake", description="The model to use for prediction"),
+    horizon_steps: int = Query(1, description="How many steps to predict"),
 ):
     try:
         input_array = np.array(request["array"])
@@ -53,16 +55,29 @@ async def predict(
     logger.info(f"Request shape: {input_array.shape} for model: {model}")
 
     # Choose the model based on the query parameter
-    if model == "model_a":
-        result = model_a.predict(input_data=input_array)
-    elif model == "model_b":
-        result = model_b.predict(input_data=input_array)
-    else:
+    if model not in models:
         logger.error(f"Model '{model}' not found")
         raise HTTPException(status_code=400, detail=f"Model '{model}' is not available")
+    # result = models[model].predict(input_data=input_array)
+    result = autoregression(models[model], input_array, horizon_steps)
+    # take only the new predictions:
+    result = result[-horizon_steps:, :, :]
 
     logger.info(f"Response shape: {result.shape}")
     return {"array": result.tolist()}
+
+
+def autoregression(model, input_array, number_of_look_ahead_steps):
+    current_sequence = np.copy(input_array)  # Start with the initial array
+    new_predictions = []
+    for _ in range(number_of_look_ahead_steps):
+        new_prediction = model.predict(input_data=current_sequence)
+        new_predictions.append(new_prediction)
+        current_sequence = np.concatenate(
+            (current_sequence, new_prediction[np.newaxis, :]), axis=1
+        )
+
+    return np.array(new_predictions)
 
 
 # @router.post("/stream-predict")

@@ -25,40 +25,96 @@ def sample_data():
 
 
 @pytest.fixture
-def prediction_data():
+def prediction_array():
     with open(PREDICTED_DATA_FILE, "r") as f:
         array_list = json.load(f)
-    return np.array(array_list)
+    return np.array([array_list])
 
 
-def test_inference_endpoint_fake_model(sample_data, prediction_data):
+@pytest.fixture
+def horizon_steps():
+    return 3
+
+
+def test_inference_endpoint_fake_model(sample_data):
     """Test the inference endpoint of the FastAPI app with FakeModel."""
     logger.info(f"Testing inference endpoint with: {len(sample_data) = }")
 
-    params = {"model": "model_a"}  # Update the query parameter as necessary
+    params = {"model": "fake"}  # Update the query parameter as necessary
     data = {"array": sample_data}
     response = client.post("/inference/predict", params=params, json=data)
     assert response.status_code == 200
     assert "array" in response.json()  # Check for expected key in response
-    assert len(response.json()["array"]) > 0  # Ensure there are predictions
-    assert np.array_equal(np.array(response.json()["array"]), np.array(sample_data)[-1])
+    response_array = np.array(response.json()["array"])
+    sample_array = np.array(sample_data)[:, -2:-1, :]
+    assert response_array.shape == sample_array.shape
+    assert np.allclose(sample_array, response_array, rtol=1e-03)
     logger.info(
         f"  SUCCESS: Inference endpoint returned: {len(response.json()['array']) = }"
     )
 
 
-def test_inference_endpoint_ts_model(sample_data, prediction_data):
-    """Test the inference endpoint of the FastAPI app with Tensorflow model."""
-    logger.info(f"Testing inference endpoint with: {len(sample_data) = }")
+def test_inference_endpoint_fake_model_autoregression(sample_data, horizon_steps):
+    """Test the inference endpoint of the FastAPI app with FakeModel."""
+    logger.info(
+        f"Testing inference endpoint with: {len(sample_data) = }, {horizon_steps = }"
+    )
 
-    params = {"model": "model_b"}
+    params = {
+        "model": "fake",
+        "horizon_steps": horizon_steps,
+    }  # Update the query parameter as necessary
     data = {"array": sample_data}
     response = client.post("/inference/predict", params=params, json=data)
     assert response.status_code == 200
     assert "array" in response.json()  # Check for expected key in response
-    assert len(response.json()["array"]) > 0  # Ensure there are predictions
-    assert np.array(response.json()["array"]).shape == prediction_data.shape
-    assert np.allclose(np.array(response.json()["array"]), prediction_data, rtol=1e-03)
+    response_array = np.array(response.json()["array"])
+    expected_array = np.stack(np.array(sample_data) * horizon_steps, axis=1)
+    assert response_array.shape == expected_array.shape
+    assert np.allclose(response_array, expected_array, rtol=1e-03)
+    logger.info(
+        f"  SUCCESS: Inference endpoint returned: {len(response.json()['array']) = }"
+    )
+
+
+def test_inference_endpoint_ts_model(sample_data, prediction_array):
+    """Test the inference endpoint of the FastAPI app with Tensorflow model."""
+    logger.info(f"Testing inference endpoint with: {len(sample_data) = }")
+
+    params = {"model": "tts_v1"}
+    data = {"array": sample_data}
+    response = client.post("/inference/predict", params=params, json=data)
+    assert response.status_code == 200
+    assert "array" in response.json()  # Check for expected key in response
+    response_array = np.array(response.json()["array"])
+    assert response_array.shape == prediction_array.shape
+    assert np.allclose(response_array, prediction_array, rtol=1e-03)
+    logger.info(
+        f"  SUCCESS: Inference endpoint returned: {len(response.json()['array']) = }"
+    )
+
+
+def test_inference_endpoint_ts_model_autoregression(
+    sample_data, prediction_array, horizon_steps
+):
+    """Test the inference endpoint of the FastAPI app with Tensorflow model."""
+    logger.info(
+        f"Testing inference endpoint with: {len(sample_data) = }, {horizon_steps = }"
+    )
+
+    params = {"model": "tts_v1"}
+    data = {"array": sample_data}
+    response = client.post("/inference/predict", params=params, json=data)
+    assert response.status_code == 200
+    assert "array" in response.json()  # Check for expected key in response
+    response_array = np.array(response.json()["array"])
+    # only the first element in prediction_array is needed
+    response_array_item_0 = response_array[:1]
+    assert response_array_item_0.shape == prediction_array.shape
+    # the first item is the same as the prediction_array, not the others!
+    assert np.allclose(response_array_item_0, prediction_array, rtol=1e-03)
+    assert not np.allclose(response_array[1:2], prediction_array, rtol=1e-03)
+    assert not np.allclose(response_array[2:3], prediction_array, rtol=1e-03)
     logger.info(
         f"  SUCCESS: Inference endpoint returned: {len(response.json()['array']) = }"
     )

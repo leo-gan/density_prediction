@@ -9,5 +9,5 @@ class FakeModel:
 
     def predict(self, input_data):
         """Model inference logic."""
-        response = input_data[-1]
+        response = input_data[:, -1, :]
         return response

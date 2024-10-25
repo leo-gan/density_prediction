@@ -30,9 +30,7 @@ class TransformerTimeSeries(nn.Module):
         self.pos_encoder = PositionalEncoding(d_model)
         encoder_layers = nn.TransformerEncoderLayer(d_model, nhead, dim_feedforward)
         self.transformer_encoder = nn.TransformerEncoder(encoder_layers, num_layers)
-        self.fc = nn.Linear(
-            d_model, num_features
-        )
+        self.fc = nn.Linear(d_model, num_features)
 
     def forward(self, src):
         src = self.input_layer(src)
@@ -54,4 +52,4 @@ class TransformerTS:
         """Model inference logic."""
         input_tensor = torch.tensor(input_data, dtype=torch.float32).unsqueeze(0)[0]
         response = self.model(input_tensor)
-        return response
+        return response.detach().cpu().numpy()
